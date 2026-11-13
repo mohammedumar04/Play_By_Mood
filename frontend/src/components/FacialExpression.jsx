@@ -94,8 +94,7 @@ export default function FacialExpression({ setSongs, mood, setMood }) {
             const expressionName = expression.charAt(0).toUpperCase() + expression.slice(1);
             setMood(expressionName);
 
-            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-            const response = await axios.get(`${apiUrl}/songs`, {
+            const response = await axios.get('/songs', {
                 params: { mood: expression }
             });
 
